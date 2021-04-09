@@ -4,6 +4,10 @@
 
 ![foto van de chat](https://i.imgur.com/TWoy2Uk.png)
 
+# Live demo
+
+[Link naar heroku app](https://lekker-praten.herokuapp.com/)
+
 # Features
 
 -   Het is mogelijk om een gebruikers naam in te voeren en mee te sturen
