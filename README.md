@@ -1,6 +1,6 @@
 # Advanced socket chat
 
-# De chat
+# De chat app
 
 ![foto van de chat](https://i.imgur.com/TWoy2Uk.png)
 
@@ -12,4 +12,11 @@
 
 # Wat er is gelukt
 
-Het is nu alleen mogelijk om een gebruikersnaam in te voeren zodat die boven het 
+Het is nu alleen mogelijk om een gebruikersnaam in te voeren zodat die boven het betreffende bericht komt te staan. 
+Als ik eerder aan het werk was gegaan had ik de anderen dingen nog kunnen toevoegen.
+
+# License
+
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
+
+> This repository uses [MIT](https://github.com/mbergevoet/iCOV-redesign/blob/master/LICENSE) license. © Merlijn Bergevoet 2021
