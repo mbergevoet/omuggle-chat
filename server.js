@@ -4,7 +4,7 @@ const app = express()
 const http = require('http').createServer(app)
 // const session = require('express-session')
 const io = require('socket.io')(http)
-const port = process.env.PORT
+const port = process.env.PORT || 2000
 const { join } = require('path')
 // const mongo = require('mongodb')
 
@@ -20,15 +20,14 @@ app
     })
 
 io.on('connection', (socket) => {
-    console.log('a user connected')
+    console.log('A user has connected')
 
     socket.on('message', (message) => {
-        // console.log('message: ' + message)
-        io.emit('message', message)
+        socket.broadcast.emit('message', message)
     })
 
     socket.on('disconnect', () => {
-        console.log('user disconnected')
+        console.log('A user has disconnected')
     })
 })
 

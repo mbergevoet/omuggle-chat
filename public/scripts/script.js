@@ -1,19 +1,32 @@
 const socket = io()
 const messages = document.querySelector('section ol')
-const input = document.querySelector('input')
+// const messageToSend = document.querySelector('#message')
+// const username = document.querySelector('#username')
 const form = document.querySelector('form')
 
 form.addEventListener('submit', (event) => {
     event.preventDefault()
-    if (input.value) {
-        socket.emit('message', input.value)
-        input.value = ''
+
+    let username = event.target[0].value;
+    let messageToSend = event.target[1].value;
+
+    if (messageToSend != '') {
+        socket.emit('message', { username: username, message: messageToSend })
+        messaging(username, messageToSend)
+        event.target[1].value = ''
     }
 })
 
-socket.on('message', function (message) {
-    const element = document.createElement('li')
-    element.textContent = message
-    messages.appendChild(element)
-    messages.scrollTop = messages.scrollHeight
+socket.on('message', (emitted) => {
+    messaging(emitted.username, emitted.messageToSend)
 })
+
+function messaging(user, message) {
+    const span = document.createElement('span')
+    const listItem = document.createElement('li')
+    span.innerText = message
+    listItem.innerText = user
+    listItem.appendChild(span)
+    messages.appendChild(listItem)
+    messages.scrollTop = messages.scrollHeight
+}
